@@ -1,1 +1,30 @@
-<html><head><title>booking.html</title></head><body>booking.html</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Appointment - Shivoham</title>
+</head>
+<body>
+  <h1>Book Your Appointment</h1>
+  <p>Choose a session: Soul Reading or Tantra Yoga Class</p>
+  <button onclick="payNow()">Pay with Razorpay</button>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    function payNow() {
+      var options = {
+        "key": "rzp_test_YourKeyHere", // Replace with live key later
+        "amount": "50000",
+        "currency": "INR",
+        "name": "Shivoham",
+        "description": "Soul Reading Appointment",
+        "handler": function (response){
+          alert("Payment Successful!");
+        },
+        "theme": { "color": "#541212" }
+      };
+      var rzp = new Razorpay(options);
+      rzp.open();
+    }
+  </script>
+</body>
+</html>
