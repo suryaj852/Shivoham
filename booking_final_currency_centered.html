@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Your Soul Reading</title>
+  <style>
+    body {
+        background-image: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        background-size: cover;
+        background-position: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        text-align: center;
+        margin-top: 10vh;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 40px;
+        border-radius: 12px;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    select, p, button {
+        font-size: 1.3rem;
+        padding: 10px;
+        margin: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Book Your Soul Reading</h1>
+    <label for="country">Select Your Country:</label><br/>
+    <select id="country" onchange="updatePrice()">
+      <option value="US">🇺🇸 United States</option>
+      <option value="CA">🇨🇦 Canada</option>
+      <option value="UK">🇬🇧 United Kingdom</option>
+      <option value="AU">🇦🇺 Australia</option>
+      <option value="IN">🇮🇳 India</option>
+      <option value="ZA">🇿🇦 South Africa</option>
+      <option value="DE">🇩🇪 Germany</option>
+      <option value="FR">🇫🇷 France</option>
+      <option value="BR">🇧🇷 Brazil</option>
+      <option value="MX">🇲🇽 Mexico</option>
+      <option value="JP">🇯🇵 Japan</option>
+      <option value="AE">🇦🇪 UAE</option>
+      <option value="SG">🇸🇬 Singapore</option>
+      <option value="MY">🇲🇾 Malaysia</option>
+      <option value="PH">🇵🇭 Philippines</option>
+    </select>
+    <p id="price">Session Price: $60 - $150</p>
+    <button>Proceed to Pay</button>
+  </div>
+  <script>
+    const prices = {
+      US: "$60 – $150",
+      CA: "C$80 – C$180",
+      UK: "£50 – £120",
+      AU: "A$80 – A$200",
+      IN: "₹1000 – ₹3000",
+      ZA: "R400 – R1000",
+      DE: "€60 – €120",
+      FR: "€50 – €100",
+      BR: "R$150 – R$400",
+      MX: "MX$500 – MX$1500",
+      JP: "¥6000 – ¥12000",
+      AE: "AED 150 – 500",
+      SG: "S$80 – S$180",
+      MY: "RM150 – RM300",
+      PH: "₱1000 – ₱2500"
+    };
+
+    function updatePrice() {
+      const country = document.getElementById("country").value;
+      document.getElementById("price").innerText = "Session Price: " + prices[country];
+    }
+  </script>
+</body>
+</html>
