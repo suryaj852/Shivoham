@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking – Soul Reading</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f7f4ed; color: #333; }
+        h2 { color: #5a2a83; }
+        select, button { padding: 10px; margin-top: 10px; width: 100%; max-width: 400px; }
+        .price-box { margin-top: 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h2>Book Your Soul Reading Session 🌿</h2>
+    <label for="country">Choose your country:</label>
+    <select id="country" onchange="updatePrice()">
+        <option value="US">$60 – $150 🇺🇸 USD</option>
+        <option value="CA">CA$80 – CA$180 🇨🇦 CAD</option>
+        <option value="UK">£50 – £120 🇬🇧 GBP</option>
+        <option value="AU">A$80 – A$200 🇦🇺 AUD</option>
+        <option value="IN">₹1000 – ₹3000 🇮🇳 INR</option>
+        <option value="ZA">R400 – R1000 🇿🇦 ZAR</option>
+        <option value="DE">€60 – €120 🇩🇪 EUR</option>
+        <option value="FR">€50 – €100 🇫🇷 EUR</option>
+        <option value="BR">R$150 – R$400 🇧🇷 BRL</option>
+        <option value="MX">$500 – $1500 🇲🇽 MXN</option>
+        <option value="JP">¥6000 – ¥12000 🇯🇵 JPY</option>
+        <option value="AE">AED 150 – 500 🇦🇪 AED</option>
+        <option value="SG">SGD 80 – 180 🇸🇬 SGD</option>
+        <option value="MY">RM 150 – 300 🇲🇾 MYR</option>
+        <option value="PH">₱1000 – ₱2500 🇵🇭 PHP</option>
+    </select>
+
+    <div class="price-box" id="priceBox">Price will be displayed here.</div>
+
+    <button onclick="payNow()">Proceed to Pay</button>
+
+    <script>
+        const prices = {
+            US: "$60 – $150",
+            CA: "CA$80 – CA$180",
+            UK: "£50 – £120",
+            AU: "A$80 – A$200",
+            IN: "₹1000 – ₹3000",
+            ZA: "R400 – R1000",
+            DE: "€60 – €120",
+            FR: "€50 – €100",
+            BR: "R$150 – R$400",
+            MX: "$500 – $1500",
+            JP: "¥6000 – ¥12000",
+            AE: "AED 150 – 500",
+            SG: "SGD 80 – 180",
+            MY: "RM 150 – 300",
+            PH: "₱1000 – ₱2500"
+        };
+
+        function updatePrice() {
+            const country = document.getElementById("country").value;
+            document.getElementById("priceBox").innerText = "Session Price: " + prices[country];
+        }
+
+        function payNow() {
+            alert("Redirecting to Razorpay (to be integrated)...");
+        }
+    </script>
+</body>
+</html>
